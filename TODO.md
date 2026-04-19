@@ -1,11 +1,1 @@
-# Task: Update logo/favicon and social media links
-
-## Steps:
-- [x] Logo/favicon references confirmed/updated to public/
-- [x] site.webmanifest updated
-- [x] Social media updated: IG/TikTok links in footer.tsx and kontak/page.tsx to wijayarentcarsemarang
-- [ ] Upload new logo/favicon images to public/
-- [x] Dev server running
-
-Current: Social media complete. Upload images and refresh browser.
-
+# TODO: Fix Next.js Vulnerability Warning\n\n1. ✅ Plan approved by user\n2. ✅ Update package.json with Next.js ^15.4.13 (latest stable)\n3. ✅ Cleared .next cache (fixed EPERM error)\n4. Run `npm install` to update deps\n5. Test `npm run build`\n6. Push for Vercel redeploy\n7. Mark complete
