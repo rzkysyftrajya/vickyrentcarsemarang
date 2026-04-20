@@ -1,4 +1,4 @@
-  "use client";
+"use client";
 
 import Image from "next/image";
 import Link from "next/link";
@@ -120,11 +120,11 @@ export function CarCard({ vehicle }: CarCardProps) {
           {vehicle.price.withDriver && (
             <div className="pt-2">
               <p className="text-xs font-semibold text-muted-foreground uppercase flex items-center gap-1.5">
-                <UserCheck className="w-3 h-3" /> Dengan Supir
+                <UserCheck className="w-3 h-3" /> Paket ALL-IN (Dengan Supir)
               </p>
               <div className="flex gap-2 mt-1">
                 <PriceBox
-                  label="All In"
+                  label="Paket ALL-IN"
                   price={vehicle.price.withDriver}
                   hari={false}
                 />

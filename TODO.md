@@ -1,1 +1,11 @@
-# TODO: Fix Next.js Vulnerability Warning\n\n1. ✅ Plan approved by user\n2. ✅ Update package.json with Next.js ^15.4.13 (latest stable)\n3. ✅ Cleared .next cache (fixed EPERM error)\n4. Run `npm install` to update deps\n5. Test `npm run build`\n6. Push for Vercel redeploy\n7. Mark complete
+## Pricing Optimization Progress
+
+### Plan Steps:
+- [x] 1. User approval for pricing strategy plan
+- [x] 2. Create standardized pricing structure in src/lib/vehicles.ts
+- [x] 3. Update CarCard component labels for "Paket ALL-IN"
+- [ ] 4. Test changes in development server (run `npm run dev` to view /armada)
+- [ ] 5. Final completion with explanation
+
+Current step: Updating vehicles.ts with optimized prices.
+

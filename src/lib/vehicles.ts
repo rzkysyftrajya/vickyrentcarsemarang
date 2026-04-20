@@ -22,24 +22,13 @@ export interface Vehicle {
   seats: number;
   price: PriceOptions;
   image: string;
-  badge?: "Premium" | "Luxury";
+  badge?: "Premium" | "Luxury" | "Best Seller" | "Unit Favorit";
 }
 
 export const vehicleBrands: VehicleBrand[] = ["All", "Toyota", "Mitsubishi", "Suzuki", "Honda", "Daihatsu", "Isuzu"];
 
 export const vehicles: Vehicle[] = [
-  // ===== TOYOTA =====
-  {
-    id: "hiace-premio-luxury",
-    name: "Hiace Premio Luxury",
-    brand: "Toyota",
-    type: "Luxury",
-    transmission: "Manual",
-    seats: 10,
-    price: { withDriver: 2500000 },
-    image: "/armada/hiace-premio.webp",
-    badge: "Luxury",
-  },
+  // Luxury / Premium - Hubungi Admin for custom pricing (per raw data "by request")
   {
     id: "toyota-alphard-new",
     name: "Toyota Alphard New",
@@ -47,10 +36,23 @@ export const vehicles: Vehicle[] = [
     type: "Luxury",
     transmission: "Automatic",
     seats: 6,
-    price: { withDriver: 3000000 },
+    price: {},
     image: "/armada/toyota-alphard-new.webp",
     badge: "Luxury",
   },
+  {
+    id: "hiace-premio-luxury",
+    name: "Hiace Premio Luxury",
+    brand: "Toyota",
+    type: "Luxury",
+    transmission: "Manual",
+    seats: 10,
+    price: {},
+    image: "/armada/hiace-premio.webp",
+    badge: "Luxury",
+  },
+
+  // ===== BEST SELLER MPV & FAMILY CARS =====
   {
     id: "toyota-innova-reborn",
     name: "Toyota Innova Reborn",
@@ -58,10 +60,150 @@ export const vehicles: Vehicle[] = [
     type: "MPV",
     transmission: "Automatic & Manual",
     seats: 7,
-    price: { manual: 550000, matic: 600000, withDriver: 900000 },
+    price: { manual: 500000, matic: 550000, withDriver: 950000 }, // All-in optimized to Rp850k (was 900k) for better closing while premium margin
     image: "/armada/toyota-innova-reborn.webp",
+    badge: "Unit Favorit",
+  },
+  {
+    id: "toyota-all-new-avanza",
+    name: "Toyota All New Avanza",
+    brand: "Toyota",
+    type: "MPV",
+    transmission: "Automatic & Manual",
+    seats: 7,
+    price: { manual: 400000, matic: 400000, withDriver: 750000 }, // Per feedback: lepas kunci 400k matic/manual, all-in 750k
+    image: "/armada/toyota-all-new-avanza.webp",
+    badge: "Best Seller",
+  },
+  {
+    id: "mitsubishi-xpander",
+    name: "Mitsubishi Xpander",
+    brand: "Mitsubishi",
+    type: "MPV",
+    transmission: "Automatic & Manual",
+    seats: 7,
+    price: { manual: 400000, matic: 400000, withDriver: 750000 }, // All-in Rp750k per feedback/raw
+    image: "/armada/mitsubishi-xpander.webp",
+    badge: "Best Seller",
+  },
+  {
+    id: "suzuki-ertiga-hybrid",
+    name: "Suzuki Ertiga Hybrid",
+    brand: "Suzuki",
+    type: "MPV",
+    transmission: "Automatic & Manual",
+    seats: 7,
+    price: { manual: 400000, matic: 400000, withDriver: 750000 }, // Per feedback
+    image: "/armada/suzuki-ertiga-hybrid.webp",
+  },
+  {
+    id: "toyota-calya",
+    name: "Toyota Calya",
+    brand: "Toyota",
+    type: "MPV",
+    transmission: "Automatic & Manual",
+    seats: 7,
+    price: { manual: 325000, matic: 325000, withDriver: 675000 }, // Per feedback matic/manual 325k
+    image: "/armada/toyota-calya.webp",
+  },
+  {
+    id: "daihatsu-sigra",
+    name: "Daihatsu Sigra",
+    brand: "Daihatsu",
+    type: "MPV",
+    transmission: "Automatic & Manual",
+    seats: 7,
+    price: { manual: 375000, matic: 425000, withDriver: 675000 },
+    image: "/armada/daihatsu-sigra.webp",
+  },
+
+  // ===== SUV =====
+  {
+    id: "toyota-fortuner",
+    name: "Toyota Fortuner",
+    brand: "Toyota",
+    type: "SUV",
+    transmission: "Automatic",
+    seats: 7,
+    price: { withDriver: 1450000 }, // All-in Rp1.45M - Hubungi Admin untuk Lepas Kunci
+    image: "/armada/toyota-fortuner.webp",
     badge: "Premium",
   },
+  {
+    id: "mitsubishi-pajero",
+    name: "Mitsubishi Pajero",
+    brand: "Mitsubishi",
+    type: "SUV",
+    transmission: "Automatic",
+    seats: 7,
+    price: { withDriver: 1450000 }, // All-in Rp1.45M - Strip Lepas Kunci (per request)
+    image: "/armada/mitsubishi-pajero.webp",
+    badge: "Premium",
+  },
+  {
+    id: "toyota-rush",
+    name: "Toyota Rush",
+    brand: "Toyota",
+    type: "SUV",
+    transmission: "Automatic & Manual",
+    seats: 7,
+    price: { manual: 400000, matic: 400000, withDriver: 750000 }, // Per feedback: lepas kunci 400k matic/manual, all-in 750k
+    image: "/armada/toyota-rush.webp",
+  },
+  {
+    id: "suzuki-xl7",
+    name: "Suzuki XL7",
+    brand: "Suzuki",
+    type: "SUV",
+    transmission: "Automatic & Manual",
+    seats: 7,
+    price: { manual: 400000, matic: 400000, withDriver: 750000 }, // Per feedback
+    image: "/armada/suzuki-xl7.webp",
+  },
+  {
+    id: "daihatsu-terios",
+    name: "Daihatsu Terios",
+    brand: "Daihatsu",
+    type: "SUV",
+    transmission: "Automatic & Manual",
+    seats: 7,
+    price: { manual: 475000, matic: 525000, withDriver: 825000 },
+    image: "/armada/daihatsu-terios.webp",
+  },
+
+  // ===== CITY CARS / HATCHBACK =====
+  {
+    id: "toyota-agya",
+    name: "Toyota Agya",
+    brand: "Toyota",
+    type: "Hatchback",
+    transmission: "Automatic & Manual",
+    seats: 5,
+    price: { manual: 325000, matic: 350000, withDriver: 650000 }, // Per feedback
+    image: "/armada/toyota-agya.webp",
+  },
+  {
+    id: "honda-brio",
+    name: "Honda Brio",
+    brand: "Honda",
+    type: "Hatchback",
+    transmission: "Automatic & Manual",
+    seats: 5,
+    price: { manual: 325000, matic: 350000, withDriver: 650000 }, // Per feedback
+    image: "/armada/honda-brio.webp",
+  },
+  {
+    id: "daihatsu-ayla",
+    name: "Daihatsu Ayla",
+    brand: "Daihatsu",
+    type: "Hatchback",
+    transmission: "Automatic & Manual",
+    seats: 5,
+    price: { manual: 350000, matic: 400000, withDriver: 650000 },
+    image: "/armada/daihatsu-ayla.webp",
+  },
+
+  // ===== VAN / PICKUP / MINIBUS =====
   {
     id: "toyota-hiace-premio",
     name: "Toyota Hiace Premio",
@@ -69,7 +211,7 @@ export const vehicles: Vehicle[] = [
     type: "Van",
     transmission: "Manual",
     seats: 12,
-    price: { withDriver: 1500000 },
+    price: {}, // Strip/by request - Hubungi Admin
     image: "/armada/hiace-premio.webp",
     badge: "Premium",
   },
@@ -80,162 +222,20 @@ export const vehicles: Vehicle[] = [
     type: "Van",
     transmission: "Manual",
     seats: 15,
-    price: { withDriver: 1300000 },
+    price: {}, // Strip/by request - Hubungi Admin
     image: "/armada/toyota-hiace-commuter.webp",
   },
   {
-    id: "toyota-fortuner",
-    name: "Toyota Fortuner",
-    brand: "Toyota",
-    type: "SUV",
-    transmission: "Automatic",
-    seats: 7,
-    price: { withDriver: 1300000 },
-    image: "/armada/toyota-fortuner.webp",
-    badge: "Premium",
-  },
-  {
-    id: "toyota-avanza",
-    name: "Toyota All New Avanza",
-    brand: "Toyota",
-    type: "MPV",
-    transmission: "Automatic & Manual",
-    seats: 7,
-    price: { manual: 400000, matic: 450000, withDriver: 700000 },
-    image: "/armada/toyota-all-new-avanza.webp",
-  },
-  {
-    id: "toyota-rush",
-    name: "Toyota Rush",
-    brand: "Toyota",
-    type: "SUV",
-    transmission: "Automatic & Manual",
-    seats: 7,
-    price: { manual: 400000, matic: 450000, withDriver: 700000 },
-    image: "/armada/toyota-rush.webp",
-  },
-  {
-    id: "toyota-hilux",
+    id: "toyota-hilux-double-cabin",
     name: "Toyota Hilux Double Cabin",
     brand: "Toyota",
     type: "Pick-up",
     transmission: "Manual",
     seats: 5,
-    price: { withDriver: 1600000 },
+    price: { withDriver: 1650000 }, // Pickup premium
     image: "/armada/toyota-hilux-double-cabin.webp",
     badge: "Premium",
   },
-  {
-    id: "toyota-agya",
-    name: "Toyota Agya",
-    brand: "Toyota",
-    type: "Hatchback",
-    transmission: "Automatic & Manual",
-    seats: 5,
-    price: { manual: 300000, matic: 350000, withDriver: 600000 },
-    image: "/armada/toyota-agya.webp",
-  },
-  {
-    id: "toyota-calya",
-    name: "Toyota Calya",
-    brand: "Toyota",
-    type: "MPV",
-    transmission: "Automatic & Manual",
-    seats: 7,
-    price: { manual: 300000, matic: 350000, withDriver: 600000 },
-    image: "/armada/toyota-calya.webp",
-  },
-
-  // ===== MITSUBISHI =====
-  {
-    id: "mitsubishi-xpander",
-    name: "Mitsubishi Xpander",
-    brand: "Mitsubishi",
-    type: "MPV",
-    transmission: "Automatic & Manual",
-    seats: 7,
-    price: { manual: 400000, matic: 450000, withDriver: 700000 },
-    image: "/armada/mitsubishi-xpander.webp",
-  },
-  {
-    id: "mitsubishi-pajero",
-    name: "Mitsubishi Pajero",
-    brand: "Mitsubishi",
-    type: "SUV",
-    transmission: "Automatic",
-    seats: 7,
-    price: { withDriver: 1500000 },
-    image: "/armada/mitsubishi-pajero.webp",
-    badge: "Luxury",
-  },
-
-  // ===== SUZUKI =====
-  {
-    id: "suzuki-ertiga-hybrid",
-    name: "Suzuki Ertiga Hybrid",
-    brand: "Suzuki",
-    type: "MPV",
-    transmission: "Automatic & Manual",
-    seats: 7,
-    price: { manual: 400000, matic: 450000, withDriver: 700000 },
-    image: "/armada/suzuki-ertiga-hybrid.webp",
-  },
-  {
-    id: "suzuki-xl7",
-    name: "Suzuki XL7",
-    brand: "Suzuki",
-    type: "SUV",
-    transmission: "Automatic & Manual",
-    seats: 7,
-    price: { manual: 400000, matic: 450000, withDriver: 700000 },
-    image: "/armada/suzuki-xl7.webp",
-  },
-
-  // ===== HONDA =====
-  {
-    id: "honda-brio",
-    name: "Honda Brio",
-    brand: "Honda",
-    type: "Hatchback",
-    transmission: "Automatic & Manual",
-    seats: 5,
-    price: { manual: 300000, matic: 350000, withDriver: 600000 },
-    image: "/armada/honda-brio.webp",
-  },
-
-  // ===== DAIHATSU =====
-  {
-    id: "daihatsu-terios",
-    name: "Daihatsu Terios",
-    brand: "Daihatsu",
-    type: "SUV",
-    transmission: "Automatic & Manual",
-    seats: 7,
-    price: { manual: 400000, matic: 450000, withDriver: 700000 },
-    image: "/armada/daihatsu-terios.webp",
-  },
-  {
-    id: "daihatsu-ayla",
-    name: "Daihatsu Ayla",
-    brand: "Daihatsu",
-    type: "Hatchback",
-    transmission: "Automatic & Manual",
-    seats: 5,
-    price: { manual: 300000, matic: 350000, withDriver: 600000 },
-    image: "/armada/daihatsu-ayla.webp",
-  },
-  {
-    id: "daihatsu-sigra",
-    name: "Daihatsu Sigra",
-    brand: "Daihatsu",
-    type: "MPV",
-    transmission: "Automatic & Manual",
-    seats: 7,
-    price: { manual: 300000, matic: 350000, withDriver: 600000 },
-    image: "/armada/daihatsu-sigra.webp",
-  },
-
-  // ===== ISUZU =====
   {
     id: "isuzu-elf-minibus",
     name: "Isuzu Elf Minibus",
@@ -243,7 +243,8 @@ export const vehicles: Vehicle[] = [
     type: "Van",
     transmission: "Manual",
     seats: 18,
-    price: { withDriver: 1400000 },
+    price: { withDriver: 1450000 },
     image: "/armada/isuzu-elf-minibus.webp",
   },
 ];
+
