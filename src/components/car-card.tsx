@@ -29,29 +29,30 @@ const PriceBox = ({
   price?: number | null;
   hari?: boolean;
 }) => {
-  const formatPrice = (price: number) => {
+const formatPrice = (price: number) => {
     return new Intl.NumberFormat("id-ID", {
       style: "currency",
       currency: "IDR",
       maximumFractionDigits: 0,
+      notation: "compact",
     }).format(price);
   };
 
   return (
-    <div className="border rounded-lg p-2 text-center bg-background/50 flex-1">
-      <p className="text-xs text-muted-foreground">{label}</p>
-      <p className="font-bold text-primary text-sm">
+    <div className="border rounded-lg p-1.5 text-center bg-background/50 flex-1 min-w-[110px]">
+      <p className="text-xs text-muted-foreground line-clamp-1">{label}</p>
+      <p className="font-bold text-primary text-xs md:text-sm truncate">
         {price ? (
           <>
             {formatPrice(price)}
             {hari && (
-              <span className="text-xs font-normal text-muted-foreground">
+              <span className="text-xs font-normal text-muted-foreground ml-1">
                 /hari
               </span>
             )}
           </>
         ) : (
-          "-"
+"Info lebih lanjut hubungi kami"
         )}
       </p>
     </div>
@@ -68,76 +69,64 @@ export function CarCard({ vehicle }: CarCardProps) {
   )}`;
 
   return (
-    <Card className="flex flex-col overflow-hidden transition-all duration-300 hover:shadow-2xl hover:-translate-y-2 group bg-card">
-      <CardHeader className="p-0">
-          <button
-          className="relative w-full h-[250px] md:h-[350px] lg:h-[450px] xl:h-[500px] overflow-hidden block flex items-center justify-center bg-muted/50"
-          onClick={() => openLightbox(vehicle.image)}
-        >
+<Card className="w-full h-full overflow-hidden hover:shadow-xl transition-all flex flex-col">
+      <CardHeader className="pb-2">
+        <div className="flex justify-between items-start">
+          <CardTitle className="text-lg">{vehicle.name}</CardTitle>
+          {vehicle.badge && <Badge variant="secondary">{vehicle.badge}</Badge>}
+        </div>
+      </CardHeader>
+<CardContent className="p-0 flex-1 flex flex-col">
+        <div className="w-full aspect-[4/5] overflow-hidden">
           <Image
             src={vehicle.image}
-            data-ai-hint={`${vehicle.type.toLowerCase()} ${vehicle.name.toLowerCase()}`}
-            alt={`Rental mobil ${vehicle.name} di Semarang`}
+            alt={vehicle.name}
             fill
-            className="object-contain sm:object-cover transition-transform duration-500 group-hover:scale-110"
-            sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+            className="object-contain cursor-pointer hover:brightness-105 transition-all p-4"
+            onClick={() => openLightbox(vehicle.image)}
           />
-          <div className="absolute top-3 right-3 flex gap-1">
-            {vehicle.badge && (
-              <Badge variant="destructive" className="capitalize">
-                {vehicle.badge}
-              </Badge>
-            )}
-            <Badge variant="secondary" className="capitalize">
-              {vehicle.type}
-            </Badge>
-          </div>
-        </button>
-      </CardHeader>
-      <CardContent className="flex-grow p-5 space-y-4">
-        <CardTitle className="text-xl font-bold text-foreground">
-          {vehicle.name}
-        </CardTitle>
-        <div className="flex justify-between items-center text-sm text-muted-foreground border-t border-b py-3">
-          <div className="flex items-center gap-2">
-            <Users className="h-5 w-5 text-primary" />
-            <span>{vehicle.seats} Kursi</span>
-          </div>
-          <div className="flex items-center gap-2">
-            <Cog className="h-5 w-5 text-primary" />
-            <span>{vehicle.transmission}</span>
-          </div>
         </div>
-
-        <div className="space-y-2">
-          <p className="text-xs font-semibold text-muted-foreground uppercase">
-            Harga Sewa (Lepas Kunci)
-          </p>
-          <div className="flex gap-2">
-            <PriceBox label="Manual" price={vehicle.price.manual} />
-            <PriceBox label="Matic" price={vehicle.price.matic} />
-          </div>
-          {vehicle.price.withDriver && (
-            <div className="pt-2">
-              <p className="text-xs font-semibold text-muted-foreground uppercase flex items-center gap-1.5">
-                <UserCheck className="w-3 h-3" /> Paket ALL-IN (Dengan Supir)
-              </p>
-              <div className="flex gap-2 mt-1">
-                <PriceBox
-                  label="Paket ALL-IN"
-                  price={vehicle.price.withDriver}
-                  hari={false}
-                />
+        <div className="p-4">
+          <div className="flex flex-col sm:flex-row justify-between text-xs sm:text-sm text-muted-foreground mb-6">
+            <div className="flex items-center gap-1">
+              <Users className="w-4 h-4" />
+              {vehicle.seats} seats
+            </div>
+              <div className="flex items-center gap-1">
+                <Cog className="w-4 h-4" />
+                {vehicle.transmission}
               </div>
+              {vehicle.price.withDriver && (
+                <div className="flex items-center gap-1">
+                  <UserCheck className="w-4 h-4" />
+                  With Driver
+                </div>
+            )}
+          </div>
+          {Object.keys(vehicle.price).length === 0 ? (
+            <div className="text-center py-8 text-muted-foreground">
+              Info lebih lanjut silahkan hubungi kami
+            </div>
+          ) : (
+            <div className="flex flex-wrap gap-2">
+              {vehicle.price.manual && (
+                <PriceBox label="Manual" price={vehicle.price.manual} />
+              )}
+              {vehicle.price.matic && (
+                <PriceBox label="Matic" price={vehicle.price.matic} />
+              )}
+              {vehicle.price.withDriver && (
+                <PriceBox label="Dengan Sopir" price={vehicle.price.withDriver} hari={false} />
+              )}
             </div>
           )}
         </div>
       </CardContent>
-      <CardFooter className="p-5 pt-0">
-        <Button asChild className="w-full" size="lg">
-          <Link href={whatsappUrl} target="_blank">
-            Booking Sekarang
-          </Link>
+      <CardFooter className="p-6">
+        <Button asChild size="lg" className="w-full">
+          <a href={whatsappUrl} target="_blank" rel="noopener noreferrer">
+            Pesan via WhatsApp
+          </a>
         </Button>
       </CardFooter>
     </Card>

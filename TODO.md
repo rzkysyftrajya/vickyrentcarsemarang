@@ -1,11 +1,7 @@
-## Pricing Optimization Progress
+# TODO: Fix CarCard Issues
 
-### Plan Steps:
-- [x] 1. User approval for pricing strategy plan
-- [x] 2. Create standardized pricing structure in src/lib/vehicles.ts
-- [x] 3. Update CarCard component labels for "Paket ALL-IN"
-- [ ] 4. Test changes in development server (run `npm run dev` to view /armada)
-- [ ] 5. Final completion with explanation
-
-Current step: Updating vehicles.ts with optimized prices.
+- [x] Step 1: Update Image component in car-card.tsx (aspect ratio 640x800, object-contain, responsive height)
+- [x] Step 2: Update PriceBox and container in car-card.tsx (responsive flex, truncate long text)
+- [x] Step 3: Test on armada page across devices (no cropping, removed 'Lihat Detail' button, only WhatsApp CTA, tightened spacing)
+- [x] Step 4: Mark complete
 

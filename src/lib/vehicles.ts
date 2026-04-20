@@ -125,7 +125,7 @@ export const vehicles: Vehicle[] = [
     type: "SUV",
     transmission: "Automatic",
     seats: 7,
-    price: { withDriver: 1450000 }, // All-in Rp1.45M - Hubungi Admin untuk Lepas Kunci
+    price: {}, // Info lebih lanjut hubungi kami
     image: "/armada/toyota-fortuner.webp",
     badge: "Premium",
   },
@@ -136,7 +136,7 @@ export const vehicles: Vehicle[] = [
     type: "SUV",
     transmission: "Automatic",
     seats: 7,
-    price: { withDriver: 1450000 }, // All-in Rp1.45M - Strip Lepas Kunci (per request)
+    price: {}, // Info lebih lanjut hubungi kami
     image: "/armada/mitsubishi-pajero.webp",
     badge: "Premium",
   },
@@ -211,7 +211,7 @@ export const vehicles: Vehicle[] = [
     type: "Van",
     transmission: "Manual",
     seats: 12,
-    price: {}, // Strip/by request - Hubungi Admin
+    price: { withDriver: 1500000 }, // All-in only package (no lepas kunci)
     image: "/armada/hiace-premio.webp",
     badge: "Premium",
   },
@@ -222,7 +222,7 @@ export const vehicles: Vehicle[] = [
     type: "Van",
     transmission: "Manual",
     seats: 15,
-    price: {}, // Strip/by request - Hubungi Admin
+    price: {}, // Info lebih lanjut hubungi kami
     image: "/armada/toyota-hiace-commuter.webp",
   },
   {
@@ -232,7 +232,7 @@ export const vehicles: Vehicle[] = [
     type: "Pick-up",
     transmission: "Manual",
     seats: 5,
-    price: { withDriver: 1650000 }, // Pickup premium
+    price: {}, // Info lebih lanjut hubungi kami
     image: "/armada/toyota-hilux-double-cabin.webp",
     badge: "Premium",
   },
@@ -243,7 +243,7 @@ export const vehicles: Vehicle[] = [
     type: "Van",
     transmission: "Manual",
     seats: 18,
-    price: { withDriver: 1450000 },
+    price: {}, // Info lebih lanjut hubungi kami
     image: "/armada/isuzu-elf-minibus.webp",
   },
 ];
