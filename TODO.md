@@ -1,7 +1,7 @@
-# TODO: Fix CarCard Issues
+# TODO: Add gtag AW-17114790061 to Next.js project
 
-- [x] Step 1: Update Image component in car-card.tsx (aspect ratio 640x800, object-contain, responsive height)
-- [x] Step 2: Update PriceBox and container in car-card.tsx (responsive flex, truncate long text)
-- [x] Step 3: Test on armada page across devices (no cropping, removed 'Lihat Detail' button, only WhatsApp CTA, tightened spacing)
-- [x] Step 4: Mark complete
+## Steps
+- [x] 1. Create TODO.md with plan steps
+- [x] 2. Edit src/app/layout.tsx to add new gtag Script and update config
+- [x] 3. Verify in browser / attempt_completion
 
