@@ -11,7 +11,7 @@ const galleryImages = Array.from({ length: TOTAL_GALLERY_IMAGES }, (_, i) => {
   const imageNumber = i + 1;
   return {
     id: `galeri-${imageNumber}`,
-    src: `/galeri/galeri${imageNumber}.webp`,
+    src: `/galeri/galeri-${imageNumber}.webp`,
     alt: `Gambar galeri ${imageNumber}`,
     hint: `galeri-image-${imageNumber}`,
   };
@@ -25,7 +25,7 @@ export default function GaleriPage() {
       <PageHeader
         title="Galeri Armada"
         breadcrumb="Beranda / Galeri"
-        imageUrl="/HERO-SECTION.webp"
+        imageUrl="/hero-section.webp"
         imageHint="car photography studio"
       />
       <section className="py-16 lg:py-24">

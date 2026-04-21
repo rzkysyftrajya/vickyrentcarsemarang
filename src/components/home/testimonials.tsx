@@ -6,7 +6,7 @@ const testimonials = [
     title: "Pengusaha",
     quote:
 "Layanan PT.VRN SEMARANG sangat profesional. Mobilnya bersih, terawat, dan proses booking-nya cepat. Perjalanan bisnis saya di Semarang menjadi sangat lancar.",
-    avatar: "/testimoni/testimoni-1.webp",
+    avatar: "/galeri/galeri-2.webp",
     hint: "male portrait businessman",
     rating: 5,
   },
