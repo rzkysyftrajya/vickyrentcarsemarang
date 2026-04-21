@@ -4,7 +4,7 @@ import { PageHeader } from "@/components/common/page-header";
 import Image from "next/image";
 import { useLightbox } from "@/hooks/use-lightbox";
 
-const TOTAL_GALLERY_IMAGES = 52; // <--- Ganti angka setiap nambah gambar
+const TOTAL_GALLERY_IMAGES = 18; // Updated to match available images in public/galeri
 
 // Buat array gambar secara dinamis
 const galleryImages = Array.from({ length: TOTAL_GALLERY_IMAGES }, (_, i) => {
