@@ -55,7 +55,7 @@ aria-label="Youtube PT.VRN SEMARANG"
                 />
               </a>
               <a
-href="https://www.instagram.com/wijayarentcarsemarang?igsh=OHZiZWJlMXFhM2o2&utm_source=qr"
+href="#"
                 target="_blank"
                 rel="noopener noreferrer"
 aria-label="Instagram PT.VRN SEMARANG"
