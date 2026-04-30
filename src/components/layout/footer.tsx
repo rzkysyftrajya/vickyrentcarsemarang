@@ -111,7 +111,7 @@ aria-label="Facebook PT.VRN SEMARANG"
                   Layanan Kami
                 </Link>
               </li>
-              <li>\n                <Link
+              <li>           <Link
                   href="/galeri"
                   className="hover:text-primary transition-colors"
                 >
